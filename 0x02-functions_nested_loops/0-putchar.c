@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * main() : This program prints _putchar, followed by a new line 
- * no input
+ * main - This program prints _putchar, followed by a new line 
  *
- * Returns 0 upon successful execution of program
+ * Return: This function returns 0 upon successful execution of program
  */
 
 int main(void)
