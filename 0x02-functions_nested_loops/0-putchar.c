@@ -1,4 +1,9 @@
-#include "main.h"
+#include "main.h">
+
+/* A program that prints _putchar, followed by a new line 
+ * no input
+ * returns 0
+ */
 
 int main(void)
 {
