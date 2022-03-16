@@ -4,7 +4,7 @@
  * _abs -  computes the absolute value of an integer.
  * @n: The number to be turned absolute
  *
- * Returns: the absolute value
+ * Return: the absolute value of n
  */
 
 int _abs(int n)
@@ -16,5 +16,4 @@ int _abs(int n)
 	else if (n >= 0)
 		abs = n;
 	return (abs);
-}
-	
+}	
