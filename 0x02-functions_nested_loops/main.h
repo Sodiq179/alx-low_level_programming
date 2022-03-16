@@ -61,11 +61,19 @@ int print_last_digit(int);
 void jack_bauer(void);
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * time_table - multiplication table
  */
 
 void times_table(void);
 
+/**
+ * add - adds two integer together
+ */
+
+int add(int, int);
+
+/**
+ * print_to_98 - prints all natural numbers from n to 98.
+ */
+void print_to_98(int n);
 #endif
