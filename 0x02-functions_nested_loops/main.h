@@ -76,4 +76,11 @@ int add(int, int);
  * print_to_98 - prints all natural numbers from n to 98.
  */
 void print_to_98(int n);
+
+/**
+ * print_times_table - print multiplication table up to n
+ * @n: integer argument
+ */
+
+void print_times_table(int n);
 #endif
