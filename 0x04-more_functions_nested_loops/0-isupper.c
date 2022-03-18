@@ -7,9 +7,9 @@
  * Return: 1 or 0
  */
 
-int _isdigit(int c)
+int _isupper(int c)
 {
-	if (c >= '0' && c <= '9')
+	if (c >= 'A' && c <= 'Z')
 		return (1);
 
 	return (0);
