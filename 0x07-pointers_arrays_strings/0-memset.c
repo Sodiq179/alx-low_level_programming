@@ -12,11 +12,17 @@
 char *_memset(char *s, char b, unsigned int n)
 {
     char *point[n];
-    for (int i = 0; i < n; i++){
+
+
+    for (int i = 0; i < n; i++)
+    {
         point[i] = &s[i];
     }
-    for (int i = 0; i < n; i++){
+
+    for (int i = 0; i < n; i++)
+    {
         *point[i] = b;
     }
+
     return (point);
 }
