@@ -1,28 +1,25 @@
 #include "main.h"
 
 /**
- * _memeset - This function fills memory with a constant byte
- * @s: The array to be modified
- * @b: The value of which the array is modified with
- * @n: Number of bit to be modified
- *
- * Return: Pointer to the array
+ * _memset - fill n bytes of memory with a constant value
+ * @s: pointer to memory area
+ * @b: constant value
+ * @n: number of bytes to fill
+ * Return: memory area
  */
 
 char *_memset(char *s, char b, unsigned int n)
 {
-    char *point[n];
 
+	int size = n; /* only accept positive sizes */
 
-    for (int i = 0; i < n; i++)
-    {
-        point[i] = &s[i];
-    }
+	if (size > 0)
+	{
+		int i;
 
-    for (int i = 0; i < n; i++)
-    {
-        *point[i] = b;
-    }
+		for (i = 0; i < size; i++)
+			s[i] = b;
+	}
 
-    return (point);
+	return (s);
 }
