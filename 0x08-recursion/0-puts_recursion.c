@@ -6,7 +6,7 @@
  * 
  * Return: the length of the string
  */
-unsigned int _strlen(char *str)
+int _strlen(char *str)
 {
 	int len, i = 0;
 	
@@ -25,7 +25,7 @@ void _puts_recursion(char *s)
 {
 	int i = 0;
 	
-	for (int i = 0; i < _strlen(s); i++)
+	for (i = 0; i < _strlen(s); i++)
 	{
 		_putchar(s[i]);
 	}
