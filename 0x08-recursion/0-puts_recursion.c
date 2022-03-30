@@ -8,13 +8,13 @@
  */
 unsigned int _strlen(char *str)
 {
-    int len = 0;
-
-    for (int i = 0; str[i] != '\0'; i++)
-    {
-        len++;
-    }
-    return (len);
+	int len, i = 0;
+	
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		len++;
+	}
+	return (len);
 }
 
 /**
@@ -23,9 +23,11 @@ unsigned int _strlen(char *str)
  */
 void _puts_recursion(char *s)
 {
-    for (int i = 0; i < _strlen(s); i++)
-    {
-        _putchar(s[i]);
-    }
-    _putchar('\n');
+	int i = 0;
+	
+	for (int i = 0; i < _strlen(s); i++)
+	{
+		_putchar(s[i]);
+	}
+	_putchar('\n');
 }
