@@ -1,33 +1,18 @@
 #include "main.h"
 
 /**
- * _strlen - To get the length of a string 
- * @str: The string
- * 
- * Return: the length of the string
- */
-int _strlen(char *str)
-{
-	int len, i = 0;
-	
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		len++;
-	}
-	return (len);
-}
-
-/**
  * _puts_recursion - This function prints out a string 
  * @s: The string
  */
 void _puts_recursion(char *s)
 {
-	int i = 0;
-	
-	for (i = 0; i < _strlen(s); i++)
+	if (*s == '\0')
 	{
-		_putchar(s[i]);
+
+		_putchar('\n');
+
 	}
-	_putchar('\n');
+	_putchar(*s);
+	s++;
+	_puts_rescursion(s);
 }
