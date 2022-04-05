@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * str_concat - a function that concatenates two strings.
@@ -12,7 +13,7 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *s3;
-	int len1 = 0, len2 = 0, i, j, k, l;
+	int i, j, k, l;
 
 	if (s1 == NULL && s2 == NULL)
 	{
@@ -23,21 +24,17 @@ char *str_concat(char *s1, char *s2)
 
 	else if (s1 == NULL)
 	{
-		for (i = 0; s2[i] != '\0'; i++)
-			len2++;
-		s3 = malloc((len2 + 1) * sizeof(char));
-		for (k = 0; k < len2; k++)
+		s3 = malloc((strlen(s2) + 1) * sizeof(char));
+		for (k = 0; k < strlen(s2); k++)
 			s3[k] = s2[k];
 		s3[k] = '\0';
 		return (s3);
 	}
-	
+
 	else if (s2 == NULL)
 	{
-		for (i = 0; s1[i] != '\0'; i++)
-			len1++;
-                s3 = malloc((len1 + 1) * sizeof(char));
-                for (k = 0; k < len1; k++)
+		s3 = malloc((strlen(s1) + 1) * sizeof(char));
+                for (k = 0; k < strlen(s1); k++)
                         s3[k] = s1[k];
                 s3[k] = '\0';
                 return (s3);
@@ -45,20 +42,16 @@ char *str_concat(char *s1, char *s2)
 
 	else
 	{
-		for (i = 0; s1[i] != '\0'; i++)
-			len1++;
-		for (j = 0; s2[j] != '\0'; j++)
-			len2++;
-		s3 = malloc((len1 + len2 + 1) * sizeof(char));
+		s3 = malloc((strlen(s1) + strlen(s2) + 1) * sizeof(char));
 		
 		if (s3 == NULL)
 			return (NULL);
 		
-		for (k = 0; k < len1; k++)
+		for (k = 0; k < strlen(s1); k++)
 			s3[k] = s1[k];
-		for (l = 0; l < len2; l++)
-			s3[len1 + l] = s2[l];
-		s3[len1 + len2] = '\0';
+		for (l = 0; l < strlen(s2); l++)
+			s3[strlen(s1) + l] = s2[l];
+		s3[strlen(s1) + strlen(s2)] = '\0';
 		return (s3);
 	}
 }
