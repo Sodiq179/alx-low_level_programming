@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 /**
- * _strdup - function that returns a pointer to a newly allocated space in memory
- * @str: the string
+ * _strdup - function that returns a pointer to a newly allocated space.
+ * @str: the string to be replicated
  *
  * Return: The pointer
  */
@@ -19,12 +19,10 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	new_str = malloc(size * sizeof(char));
+	new_str = malloc((size + 1) * sizeof(char));
 
-	if (new_str == NULL)
-		return (NULL);
 	for (j = 0; j < size; j++)
 		new_str[j] = str[j];
 	new_str[j] = '\0';
 	return (new_str);
-}	
+}
