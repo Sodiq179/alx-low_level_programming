@@ -13,45 +13,23 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *s3;
-	long unsigned int k, l;
+	unsigned int long k, l;
 
-	if (s1 == NULL && s2 == NULL)
-	{
-		s3 = malloc(1 * sizeof(char));
-		s3[0] = '\0';
-		return (s3);
-	}
+	if (s1 == NULL)
+		s1 = "";
 
-	else if (s1 == NULL)
-	{
-		s3 = malloc((strlen(s2) + 1) * sizeof(char));
-		for (k = 0; k < strlen(s2); k++)
-			s3[k] = s2[k];
-		s3[k] = '\0';
-		return (s3);
-	}
+	if (s2 == NULL)
+		s2 = "";
 
-	else if (s2 == NULL)
-	{
-		s3 = malloc((strlen(s1) + 1) * sizeof(char));
-                for (k = 0; k < strlen(s1); k++)
-                        s3[k] = s1[k];
-                s3[k] = '\0';
-                return (s3);
-        }
-
-	else
-	{
-		s3 = malloc((strlen(s1) + strlen(s2) + 1) * sizeof(char));
+	s3 = malloc((strlen(s1) + strlen(s2) + 1) * sizeof(char));
+	
+	if (s3 == NULL)
+		return (NULL);
 		
-		if (s3 == NULL)
-			return (NULL);
-		
-		for (k = 0; k < strlen(s1); k++)
-			s3[k] = s1[k];
-		for (l = 0; l < strlen(s2); l++)
-			s3[strlen(s1) + l] = s2[l];
-		s3[strlen(s1) + strlen(s2)] = '\0';
-		return (s3);
-	}
+	for (k = 0; k < strlen(s1); k++)
+		s3[k] = s1[k];
+	for (l = 0; l < strlen(s2); l++)
+		s3[strlen(s1) + l] = s2[l];
+	s3[strlen(s1) + strlen(s2)] = '\0';
+	return (s3);
 }
