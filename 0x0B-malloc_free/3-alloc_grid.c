@@ -3,8 +3,8 @@
 
 /**
  * alloc_grid - returns a pointer to a 2 dimensional array of integers.
- * @width; The columns of the array
  * @height: The rows of the array
+ * @width; The columns of the array
  *
  * Return: The pointer
  */
@@ -13,7 +13,7 @@ int **alloc_grid(int width, int height)
 {
 	int **grid_var;
 	int i, j;
-	
+
 	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
