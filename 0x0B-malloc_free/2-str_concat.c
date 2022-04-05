@@ -15,7 +15,11 @@ char *str_concat(char *s1, char *s2)
 	int len1 = 0, len2 = 0, i, j, k, l;
 
 	if (s1 == NULL && s2 == NULL)
-		return (NULL);
+	{
+		s3 = malloc(1 * sizeof(char));
+		s3[0] = '\0';
+		return (s3);
+	}
 
 	else if (s1 == NULL)
 	{
