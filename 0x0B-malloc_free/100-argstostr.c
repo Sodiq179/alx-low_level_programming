@@ -12,7 +12,8 @@
 char *argstostr(int ac, char **av)
 {
 	char *s;
-	int len = 0, i, j, k = 0;
+	int i;
+	unsigned int long len = 0, j, k = 0;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
