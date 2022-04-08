@@ -1,44 +1,29 @@
-#include <stdlib.h>
-#include "main.h"
+#include "holberton.h"
 
 /**
- * _realloc - allocate memory and set all values to 0
- * @ptr: pointer to the memory previously allocated (malloc(old_size))
- * @old_size: size previously allocated
- * @new_size: new size to reallocate
- * Return: pointer to reallocated memory
+ * main - multiplies two positive numbers
+ * @argc: n arguments
+ * @argv: args
+ * Return: int
  */
-
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+int main(int argc, char *argv[])
 {
-	void *p;
-	unsigned int i;
-
-	if (new_size == 0 && ptr != NULL) /* free memory if reallocate 0 */
+unsigned long mul;
+int i, j;
+	if (argc != 3)
+	{ printf("Error\n");
+	exit(98); }
+	for (i = 1; i < argc; i++)
 	{
-		free(ptr);
-		return (NULL);
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] > 57 || argv[i][j] < 48)
+			{  printf("Error\n");
+			exit(98); }
+		}
+
 	}
-
-	if (new_size == old_size) /* return ptr if reallocating same old size */
-		return (ptr);
-
-	if (ptr == NULL) /* malloc new size if ptr is originally null */
-	{
-		p = malloc(new_size);
-		if (p == NULL)
-			return (NULL);
-		else
-			return (p);
-	}
-
-	p = malloc(new_size); /* malloc and check error */
-	if (p == NULL)
-		return (NULL);
-
-	/* fill up values up till minimum of old or new size */
-	for (i = 0; i < old_size && i < new_size; i++)
-		*((char *)p + i) = *((char *)ptr + i);
-	free(ptr); /* free old ptr */
-
-
+	mul = atol(argv[1]) *  atol(argv[2]);
+	printf("%lu\n", mul);
+return (0);
+}
