@@ -10,14 +10,14 @@
  */
 int raise_to(int x, unsigned int y)
 {
-        int result = 1;
-        unsigned int i = 0;
+	int result = 1;
+	unsigned int i = 0;
 
-        for (i = 0; i < y; i++)
-        {
-                result *= x;
-        }
-        return(result);
+	for (i = 0; i < y; i++)
+	{
+		result *= x;
+	}
+	return (result);
 }
 
 /**
@@ -28,13 +28,13 @@ int raise_to(int x, unsigned int y)
  */
 int _strlen(const char *s)
 {
-        int len = 0, i;
+	int len = 0, i;
 
-        for (i = 0; s[i] != '\0'; i++)
-        {
-                len++;
-        }
-        return(len);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		len++;
+	}
+	return (len);
 }
 
 /**
